@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Data for {{ city }}, {{ country_code }}</title>
+
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+        table.c {
+  table-layout: auto;
+  width: 75%;
+}
+    </style>
+
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand"><h2>Weather & Elevation Data for {{ city }}, {{ country_code }} </h2></a>
+</nav>
+
+
+
+</head>
+<body>
+
+<div id="output_table" style="padding: 30px 10px 30px 0px" class="container">
+
+<table class="table">
+    <thead class="thead-dark">
+  <tr>
+    <th>Dataset (Imperial)</th>
+    <th>Value</th>
+  </tr>
+    </thead>
+  <tr>
+    <td>Average Temperature ℉</td>
+    <td><strong>{{ avg_fahrenheit }}</strong></td>
+  </tr>
+  <tr>
+    <td>Minimum Temperature ℉</td>
+    <td><strong>{{ min_fahrenheit }}</strong></td>
+  </tr>
+  <tr>
+    <td>Maximum Temperature ℉</td>
+    <td><strong>{{ max_fahrenheit }}</strong></td>
+  </tr>
+    <tr>
+    <td>Weather Description</td>
+    <td><strong>{{ weather_description }}</strong></td>
+  </tr>
+  <tr>
+    <td>Sunrise</td>
+    <td><strong>{{ sunrise }}</strong></td>
+  </tr>
+  <tr>
+    <td>Sunset</td>
+    <td><strong>{{ sunset }}</strong></td>
+  </tr>
+      <tr>
+    <td>Elevation (ft)</td>
+    <td><strong>{{ elevation }}</strong></td>
+  </tr>
+     <tr>
+    <td>Visibility (ft)</td>
+    <td><strong>{{ visibility_feet }}</strong></td>
+    </tr>
+    <tr>
+    <td>Humidity</td>
+    <td><strong>{{ humidity }}</strong></td>
+  </tr>
+    <tr>
+    <td>Wind-speed</td>
+    <td><strong>{{ windspeed_kmh }} K/mh</strong></td>
+    </tr>
+
+
+</table>
+
+
+</div>
+
+<div class="container">
+<div style="margin: -30px 0px 10px -15px">
+    <button onclick="goBack()" type="back_button" class="mt-2 btn btn-primary">Go Back</button>
+</div>
+    </div>
+
+
+<div class="container" style="padding: 10px 0px 0px 0px">
+<div class="alert-primary">
+    <p><strong>Time for OpenWeather API: {{ time_for_services[0] }}s</strong></p>
+    <p><strong>Time for MapQuest API: {{ time_for_services[1] }}s</strong> </p>
+</div>
+    </div>
+
+<div class="container" style="padding: 10px 0px 0px 0px">
+    <div class="alert-success">
+        <p><strong>Time for POST own API: {{ time_for_services[2] }}s</strong> </p>
+        <p><strong>Time for GET own API: {{ time_for_services[3] }}s</strong> </p>
+        <p><strong>Overall Time for own API: {{ time_for_services[4] }}s</strong> </p>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+function goBack() {
+  window.location.href='http://127.0.0.1:8500/'
+}
+</script>

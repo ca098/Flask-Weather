@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Weather and Elevation Data</title>
+
+
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+    <div class="container" div style="padding-top: 10px;" div style="margin-right: 150px;">
+      <h1 class="mt-4 mb-4">Weather & Elevation Data</h1>
+
+      <form method="POST">
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="uid">Enter Name of City</label>
+              <input id="cityInput" onclick="ClearButton()" type="text" class="form-control" name="city" placeholder="E.g. London" required minlength="3" maxlength="20">
+            </div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="mt-2 btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <script>
+   function ClearButton() {
+       document.getElementById('CityInput').value = ""
+   }
+    </script>
+
+
+{% endblock %}
