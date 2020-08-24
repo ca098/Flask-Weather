@@ -1,4 +1,4 @@
-# Distributed Systems Coursework 2
+# Flask Weather API
 
 This project is for COMP3211. The DistAPI directory contains a REST API that handles a POST from the client and parses the data into
 an imperial format. The ClientWebsite directory holds a website that sends data to this service and handles the response.
